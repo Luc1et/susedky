@@ -71,7 +71,8 @@ body::before {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 56px 40px;
+    max-width: 520px;
+    padding: 64px 36px 36px;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -109,10 +110,10 @@ body::before {
 }
 
 .logo {
-    max-width: 240px;
+    max-width: 220px;
     width: 100%;
     display: block;
-    margin: 0 auto 40px;
+    margin: 0 auto 42px;
     animation: gentlePulse 4s ease-in-out infinite;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.12));
     transition: filter 0.3s ease;
@@ -130,7 +131,7 @@ body::before {
 }
 
 h1 {
-    margin: 0 0 56px;
+    margin: 0 0 48px;
     font-size: clamp(2.8rem, 6vw, 4.5rem);
     font-weight: 700;
     letter-spacing: -0.025em;
@@ -149,20 +150,45 @@ h1 {
 }
 
 p {
-    margin: 0 auto 40px;
-    max-width: 600px;
+    margin: 0 auto 32px;
+    max-width: 560px;
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.75;
     color: var(--text-secondary);
     font-weight: 400;
 }
 
 .text-line {
-    display: inline;
+    display: block;
 }
 
 @media (min-width: 768px) {
-    .text-line {
+    .text-line:nth-child(1),
+    .text-line:nth-child(2) {
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    .text-line:nth-child(2)::after {
+        content: ' ';
+    }
+
+    .text-line:nth-child(3) {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .text-line:nth-child(1),
+    .text-line:nth-child(2) {
+        display: inline;
+    }
+    
+    .text-line:nth-child(2)::after {
+        content: ' ';
+    }
+    
+    .text-line:nth-child(3) {
         display: block;
     }
 }
@@ -229,7 +255,7 @@ p {
     }
 
     .card {
-        padding: 40px 24px;
+        padding: 56px 24px 32px;
         border-radius: 20px;
     }
 
@@ -240,7 +266,7 @@ p {
 
     h1 {
         font-size: clamp(2.2rem, 8vw, 3.5rem);
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     p {
