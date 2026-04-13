@@ -62,8 +62,11 @@ body::before {
 .wrapper {
     position: relative;
     z-index: 1;
-    max-width: 720px;
+    max-width: 960px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -71,7 +74,7 @@ body::before {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    max-width: 520px;
+    max-width: 560px;
     padding: 64px 36px 36px;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -281,5 +284,16 @@ p {
     .pill {
         padding: 14px 24px;
         font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .wrapper {
+        max-width: 1140px;
+    }
+
+    .card {
+        max-width: 680px;
+        padding: 72px 44px 44px;
     }
 }
